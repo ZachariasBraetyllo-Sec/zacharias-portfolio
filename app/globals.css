@@ -58,3 +58,8 @@ a {
   background: var(--accent);
   color: #111318;
 }
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
