@@ -99,20 +99,44 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <section className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 py-8 sm:px-10 lg:px-16">
-        <header className="flex items-center justify-between border-b border-border pb-5">
+        <header className="flex items-start justify-between gap-6 border-b border-border pb-5 sm:items-center">
           <a
             href="#top"
-            className="font-mono text-sm font-semibold uppercase tracking-[0.18em]"
+            className="shrink-0 font-mono text-sm font-semibold uppercase tracking-[0.18em]"
           >
             Zacharias Braetyllo
           </a>
 
-          <nav aria-label="Primary navigation">
+          <nav
+            aria-label="Primary navigation"
+            className="flex flex-wrap items-center justify-end gap-x-5 gap-y-2"
+          >
+            <a
+              href="#work"
+              className="font-mono text-xs uppercase tracking-[0.16em] text-muted hover:text-foreground"
+            >
+              Work
+            </a>
+
+            <a
+              href="#process"
+              className="font-mono text-xs uppercase tracking-[0.16em] text-muted hover:text-foreground"
+            >
+              Process
+            </a>
+
             <a
               href="#about"
               className="font-mono text-xs uppercase tracking-[0.16em] text-muted hover:text-foreground"
             >
               About
+            </a>
+
+            <a
+              href="#contact"
+              className="font-mono text-xs uppercase tracking-[0.16em] text-muted hover:text-foreground"
+            >
+              Contact
             </a>
           </nav>
         </header>
@@ -338,7 +362,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="px-6 py-20 sm:px-10 lg:px-16 lg:py-28">
+      <section
+        id="about"
+        className="px-6 py-20 sm:px-10 lg:px-16 lg:py-28"
+      >
         <div className="mx-auto grid w-full max-w-7xl gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div>
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent">
@@ -416,7 +443,7 @@ export default function Home() {
               </p>
 
               <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
-                Let’s build something useful.
+                Let&apos;s build something useful.
               </h2>
 
               <p className="mt-6 max-w-xl text-lg leading-8 text-muted">
