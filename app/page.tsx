@@ -1,3 +1,24 @@
+const buildAreas = [
+  {
+    number: "01",
+    title: "Technical Systems",
+    description:
+      "I work with the systems people rely on every day, from support operations and device workflows to the infrastructure behind a smooth user experience.",
+  },
+  {
+    number: "02",
+    title: "Security & Trust",
+    description:
+      "I approach security as a design responsibility: protect the user, reduce uncertainty, and make the safe path understandable.",
+  },
+  {
+    number: "03",
+    title: "AI Products",
+    description:
+      "I build AI-assisted tools that help people reason through complex information without hiding the evidence, limitations, or decisions underneath.",
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -85,6 +106,48 @@ export default function Home() {
           <span>Chicago, Illinois</span>
           <span>Building thoughtfully</span>
         </footer>
+      </section>
+
+      <section
+        id="work"
+        className="border-y border-border bg-surface px-6 py-20 sm:px-10 lg:px-16 lg:py-28"
+      >
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+            <div>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+                What I Build
+              </p>
+
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+                Systems shaped around real people.
+              </h2>
+            </div>
+
+            <p className="max-w-2xl text-lg leading-8 text-muted lg:justify-self-end">
+              My work crosses support, security, and emerging technology, but
+              the goal stays consistent: understand the problem clearly, make
+              the system easier to trust, and leave the user better supported.
+            </p>
+          </div>
+
+          <div className="mt-14 grid border-t border-border lg:grid-cols-3">
+            {buildAreas.map((area) => (
+              <article
+                key={area.number}
+                className="border-b border-border py-8 lg:border-b-0 lg:border-r lg:px-8 lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0"
+              >
+                <p className="font-mono text-xs font-semibold tracking-[0.18em] text-accent-warm">
+                  {area.number}
+                </p>
+
+                <h3 className="mt-5 text-2xl font-semibold">{area.title}</h3>
+
+                <p className="mt-4 leading-7 text-muted">{area.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
     </main>
   );
