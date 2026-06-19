@@ -19,6 +19,27 @@ const buildAreas = [
   },
 ];
 
+const currentProjects = [
+  {
+    number: "01",
+    title: "Kestrel",
+    status: "In Development",
+    category: "AI Career Navigation",
+    description:
+      "An evidence-grounded platform that evaluates one professional profile against one opportunity and produces a traceable, requirement-level assessment.",
+    focus: "Backend architecture, data models, and assessment logic",
+  },
+  {
+    number: "02",
+    title: "Prism",
+    status: "Submission Ready",
+    category: "AI Adaptation Studio",
+    description:
+      "A creative decision-support system designed to help teams examine how stories and ideas can be thoughtfully adapted across formats and audiences.",
+    focus: "Submission materials, project documentation, and presentation",
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -144,6 +165,72 @@ export default function Home() {
                 <h3 className="mt-5 text-2xl font-semibold">{area.title}</h3>
 
                 <p className="mt-4 leading-7 text-muted">{area.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        className="px-6 py-20 sm:px-10 lg:px-16 lg:py-28"
+      >
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
+            <div>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+                Currently Building
+              </p>
+
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+                Work in motion.
+              </h2>
+            </div>
+
+            <p className="max-w-2xl text-lg leading-8 text-muted lg:justify-self-end">
+              These projects are still evolving. Their status is shown openly
+              because the process, decisions, and systems behind the work matter
+              just as much as the final release.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 lg:grid-cols-2">
+            {currentProjects.map((project) => (
+              <article
+                key={project.title}
+                className="group flex min-h-[28rem] flex-col border border-border bg-surface p-7 transition-transform duration-200 hover:-translate-y-1 sm:p-9"
+              >
+                <div className="flex items-start justify-between gap-6">
+                  <p className="font-mono text-xs font-semibold tracking-[0.18em] text-accent-warm">
+                    PROJECT {project.number}
+                  </p>
+
+                  <span className="border border-accent px-3 py-1 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-accent">
+                    {project.status}
+                  </span>
+                </div>
+
+                <div className="mt-16">
+                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
+                    {project.category}
+                  </p>
+
+                  <h3 className="mt-4 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+                    {project.title}
+                  </h3>
+
+                  <p className="mt-6 max-w-xl text-lg leading-8 text-muted">
+                    {project.description}
+                  </p>
+                </div>
+
+                <div className="mt-auto border-t border-border pt-6">
+                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
+                    Current Focus
+                  </p>
+
+                  <p className="mt-3 leading-7">{project.focus}</p>
+                </div>
               </article>
             ))}
           </div>
