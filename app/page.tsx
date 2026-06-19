@@ -67,6 +67,13 @@ const workingPrinciples = [
   },
 ];
 
+const experienceAreas = [
+  "Technical support and endpoint systems",
+  "Cybersecurity and responsible system design",
+  "AI-assisted products and decision tools",
+  "Documentation, troubleshooting, and user advocacy",
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -306,6 +313,75 @@ export default function Home() {
                 </p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="about"
+        className="px-6 py-20 sm:px-10 lg:px-16 lg:py-28"
+      >
+        <div className="mx-auto grid w-full max-w-7xl gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+          <div>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+              About
+            </p>
+
+            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+              I build from the intersection of systems and people.
+            </h2>
+
+            <div className="mt-10 border-l-2 border-accent-warm pl-6">
+              <p className="text-xl leading-8">
+                The strongest technology does more than function correctly. It
+                helps people understand what is happening, what they can do
+                next, and why the system deserves their trust.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div className="space-y-6 text-lg leading-8 text-muted">
+              <p>
+                My foundation is in hands-on technical support, where every
+                problem arrives with both a system behind it and a person
+                affected by it. That experience taught me to investigate
+                carefully, communicate clearly, and treat usability as part of
+                the technical solution rather than an afterthought.
+              </p>
+
+              <p>
+                From there, my work expanded into cybersecurity, software
+                development, and AI-assisted product design. Across those areas,
+                I am most interested in building tools that reduce confusion,
+                expose meaningful evidence, and help users make decisions with
+                greater confidence.
+              </p>
+
+              <p>
+                I am still growing across disciplines, but the thread connecting
+                the work is already clear: I like understanding complicated
+                systems, finding where people struggle inside them, and building
+                something more useful in response.
+              </p>
+            </div>
+
+            <div className="mt-10 border-t border-border pt-8">
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
+                Experience Across
+              </p>
+
+              <ul className="mt-6 grid gap-4 sm:grid-cols-2">
+                {experienceAreas.map((area) => (
+                  <li
+                    key={area}
+                    className="border-l border-border pl-4 leading-7"
+                  >
+                    {area}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
