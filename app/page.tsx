@@ -40,6 +40,33 @@ const currentProjects = [
   },
 ];
 
+const workingPrinciples = [
+  {
+    number: "01",
+    title: "Clarify the real problem",
+    description:
+      "Before reaching for a tool, I work to understand what is actually getting in the user’s way, what constraints matter, and what a useful outcome should look like.",
+  },
+  {
+    number: "02",
+    title: "Design for trust",
+    description:
+      "I make evidence, limitations, status, and uncertainty visible so people can understand what a system is doing instead of being asked to trust a black box.",
+  },
+  {
+    number: "03",
+    title: "Build deliberately",
+    description:
+      "I break complex work into manageable stages, test assumptions early, and keep the structure clean enough that the project can grow without becoming brittle.",
+  },
+  {
+    number: "04",
+    title: "Document the decisions",
+    description:
+      "I record why choices were made, what changed, and what remains unfinished so the work can be maintained, reviewed, and improved with confidence.",
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -92,7 +119,7 @@ export default function Home() {
               </a>
 
               <a
-                href="#about"
+                href="#process"
                 className="inline-flex items-center justify-center border border-foreground px-5 py-3 font-mono text-sm font-semibold uppercase tracking-[0.12em] hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
               >
                 About How I Build
@@ -231,6 +258,52 @@ export default function Home() {
 
                   <p className="mt-3 leading-7">{project.focus}</p>
                 </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="process"
+        className="border-y border-border bg-surface-strong px-6 py-20 sm:px-10 lg:px-16 lg:py-28"
+      >
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+            <div>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+                How I Work
+              </p>
+
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+                Thoughtful systems begin with thoughtful choices.
+              </h2>
+            </div>
+
+            <p className="max-w-2xl text-lg leading-8 text-muted lg:justify-self-end">
+              I care about what gets built, but also about how it gets built:
+              with clear reasoning, visible tradeoffs, and enough structure for
+              the work to remain useful after the first version ships.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2">
+            {workingPrinciples.map((principle) => (
+              <article
+                key={principle.number}
+                className="min-h-[19rem] bg-surface-strong p-7 sm:p-9"
+              >
+                <p className="font-mono text-xs font-semibold tracking-[0.18em] text-accent-warm">
+                  PRINCIPLE {principle.number}
+                </p>
+
+                <h3 className="mt-8 text-2xl font-semibold">
+                  {principle.title}
+                </h3>
+
+                <p className="mt-4 max-w-xl leading-7 text-muted">
+                  {principle.description}
+                </p>
               </article>
             ))}
           </div>
