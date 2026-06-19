@@ -74,6 +74,27 @@ const experienceAreas = [
   "Documentation, troubleshooting, and user advocacy",
 ];
 
+const contactLinks = [
+  {
+    number: "01",
+    label: "LinkedIn",
+    detail: "Professional experience and updates",
+    href: "https://www.linkedin.com/in/zachariasbraetyllo",
+  },
+  {
+    number: "02",
+    label: "GitHub",
+    detail: "Repositories, builds, and technical work",
+    href: "https://github.com/ZachariasBraetyllo-Sec",
+  },
+  {
+    number: "03",
+    label: "Email",
+    detail: "Direct inquiries and conversation",
+    href: "mailto:zbraetyllo@outlook.com",
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -317,10 +338,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="about"
-        className="px-6 py-20 sm:px-10 lg:px-16 lg:py-28"
-      >
+      <section id="about" className="px-6 py-20 sm:px-10 lg:px-16 lg:py-28">
         <div className="mx-auto grid w-full max-w-7xl gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div>
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent">
@@ -385,6 +403,74 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section
+        id="contact"
+        className="border-t border-border bg-surface px-6 py-20 sm:px-10 lg:px-16 lg:py-28"
+      >
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+            <div>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+                Contact
+              </p>
+
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+                Let’s build something useful.
+              </h2>
+
+              <p className="mt-6 max-w-xl text-lg leading-8 text-muted">
+                I am open to conversations about technical roles,
+                collaborative projects, and thoughtful products that improve
+                how people work with technology.
+              </p>
+            </div>
+
+            <div className="border-t border-border">
+              {contactLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.label === "Email" ? undefined : "_blank"}
+                  rel={link.label === "Email" ? undefined : "noreferrer"}
+                  className="group grid gap-4 border-b border-border py-7 sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-6"
+                >
+                  <span className="font-mono text-xs font-semibold tracking-[0.18em] text-accent-warm">
+                    {link.number}
+                  </span>
+
+                  <span>
+                    <span className="block text-2xl font-semibold">
+                      {link.label}
+                    </span>
+
+                    <span className="mt-1 block leading-7 text-muted">
+                      {link.detail}
+                    </span>
+                  </span>
+
+                  <span
+                    aria-hidden="true"
+                    className="font-mono text-xl text-accent transition-transform duration-200 group-hover:translate-x-1"
+                  >
+                    ↗
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="px-6 py-8 sm:px-10 lg:px-16">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 border-t border-border pt-6 font-mono text-xs uppercase tracking-[0.16em] text-muted sm:flex-row sm:items-center sm:justify-between">
+          <span>© 2026 Zacharias Braetyllo</span>
+
+          <a href="#top" className="hover:text-foreground">
+            Back to top ↑
+          </a>
+        </div>
+      </footer>
     </main>
   );
 }
