@@ -15,7 +15,7 @@ const projects = [
     type: "MISSION INTELLIGENCE / REACT + TYPESCRIPT + IBM GRANITE",
     description: "A spacecraft mission decision-support interface built to make complex telemetry understandable.",
     detail: "Deterministic simulations. Structured analysis. Human-in-the-loop decisions.",
-    href: "https://github.com/ZachariasBraetyllo-Sec/vantage-ai-mission-intelligence",
+    href: "/projects/vantage",
     className: "project-vantage",
     motif: "V",
   },
@@ -74,7 +74,7 @@ export default function Home() {
           {projects.map((project) => (
             <article className={`feature ${project.className}`} key={project.name}>
               <div className="feature-meta"><span>FEATURE / {project.number}</span><span>{project.type}</span></div>
-              <a className="feature-art" href={project.href} target="_blank" rel="noreferrer" aria-label={`Explore ${project.name} on GitHub`}>
+              <a className="feature-art" href={project.href} target={project.name === "VANTAGE" ? undefined : "_blank"} rel={project.name === "VANTAGE" ? undefined : "noreferrer"} aria-label={`Explore ${project.name} ${project.name === "VANTAGE" ? "case study" : "on GitHub"}`}>
                 <span className="art-grid" aria-hidden="true" />
                 <span className="art-motif" aria-hidden="true">{project.motif}</span>
                 <span className="art-corner art-corner-one" aria-hidden="true">+</span>
@@ -90,7 +90,7 @@ export default function Home() {
               </a>
               <div className="feature-content">
                 <div className="feature-copy"><h3>{project.name}</h3><p>{project.description}</p><span className="feature-detail">{project.detail}</span></div>
-                <a className="feature-link" href={project.href} target="_blank" rel="noreferrer">EXPLORE REPOSITORY <Arrow /></a>
+                <a className="feature-link" href={project.href} target={project.name === "VANTAGE" ? undefined : "_blank"} rel={project.name === "VANTAGE" ? undefined : "noreferrer"}>{project.name === "VANTAGE" ? "VIEW CASE STUDY" : "EXPLORE REPOSITORY"} <Arrow /></a>
               </div>
             </article>
           ))}
