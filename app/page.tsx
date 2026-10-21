@@ -64,12 +64,12 @@ export default function Home() {
         <div className="manifesto-main">
           <p className="eyebrow dark-eyebrow">BEYOND THE BUZZWORDS</p>
           <h2 id="manifesto-title">Good technology<br />should <span className="accent-under">make sense.</span></h2>
-          <div className="manifesto-low"><span className="asterisk" aria-hidden="true">✳</span><p>My background in technical support and cybersecurity informs how I build: with attention to the person using the system, the evidence behind its decisions, and the details that make it dependable.</p></div>
+          <div className="manifesto-low"><span className="asterisk" aria-hidden="true">✳</span><p>Years spent troubleshooting systems for real people changed how I approach software. I want users to understand what a tool is doing and have good reasons to trust it.</p></div>
         </div>
       </section>
 
       <section className="work" id="work" aria-labelledby="work-title">
-        <div className="work-head"><div><p className="eyebrow">[ 02 / SELECTED WORK ]</p><h2 id="work-title">Proof of <em>work.</em></h2></div><p>Independent builds at the intersection of software, artificial intelligence, and real-world problem solving.</p></div>
+        <div className="work-head"><div><p className="eyebrow">[ 02 / SELECTED WORK ]</p><h2 id="work-title">Proof of <em>work.</em></h2></div><p>Things I've built to answer a question, test an idea, or make someone's work easier.</p></div>
         <div className="feature-list">
           {projects.map((project) => (
             <article className={`feature ${project.className}`} key={project.name}>
@@ -98,7 +98,7 @@ export default function Home() {
         <div className="more-work"><div><span className="eyebrow">THE INDEX / OTHER BUILDS</span><h3>More from the workshop<span className="blue-dot">.</span></h3></div><div className="project-index">{moreProjects.map((p, i) => <a key={p.title} href={p.href} target="_blank" rel="noreferrer"><span className="index-num">0{i+3}</span><span className="index-name">{p.title}</span><span className="index-category">{p.category}</span><span className="index-arrow"><Arrow /></span></a>)}</div></div>
       </section>
 
-      <section className="about" id="about"><span className="eyebrow">[ 03 / THE PERSON BEHIND THE WORK ]</span><div className="about-layout"><h2>Curious by nature.<br /><em>Deliberate</em> by design.</h2><div className="about-copy"><p>I'm Zacharias Braetyllo, a Chicago-based technologist with a foundation in IT systems and cybersecurity, now focused on building software and practical AI applications.</p><p>I care about what a system does, how it gets there, and whether the person on the other side can trust it.</p><a href="https://github.com/ZachariasBraetyllo-Sec" target="_blank" rel="noreferrer">MORE ON GITHUB <Arrow /></a></div></div></section>
+      <section className="about" id="about"><span className="eyebrow">[ 03 / THE PERSON BEHIND THE WORK ]</span><div className="about-layout"><h2>Curious by nature.<br /><em>Deliberate</em> by design.</h2><div className="about-copy"><p>I'm Zacharias Braetyllo, a Chicago-based technologist who started on the support side of IT. These days I'm turning that experience into software, especially tools that put AI to practical use.</p><p>I want people to understand the tools they rely on. That means asking difficult questions during development, then making the answers visible in the finished product.</p><a href="https://github.com/ZachariasBraetyllo-Sec" target="_blank" rel="noreferrer">MORE ON GITHUB <Arrow /></a></div></div></section>
       <footer className="footer" id="contact"><div className="footer-top"><span>[ 04 / WHAT'S NEXT? ]</span><span>OPEN TO CONVERSATION</span></div><a className="footer-cta" href="mailto:zbraetyllo@outlook.com">Let's make<br /><em>something matter.</em><Arrow /></a><div className="footer-bottom"><span>© 2026 ZACHARIAS BRAETYLLO</span><div><a href="https://github.com/ZachariasBraetyllo-Sec" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="https://www.linkedin.com/in/zachariasbraetyllo" target="_blank" rel="noreferrer">LINKEDIN ↗</a><a href="#top">BACK TO TOP ↑</a></div></div></footer>
     </main>
   );
