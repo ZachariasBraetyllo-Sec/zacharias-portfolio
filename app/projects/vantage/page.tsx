@@ -34,7 +34,7 @@ export default function VantageCaseStudy() {
 
       <section className={styles.intro}>
         <p className={styles.marker}>[ 01 / THE CHALLENGE ]</p>
-        <div><h2>Data is constant.<br /><em>Clarity isn't.</em></h2><p>Spacecraft operations produce continuous streams of telemetry. When something goes wrong, the challenge is not simply detecting a changing number. It is understanding how signals across multiple subsystems relate, what those changes could mean, and what an operator should examine next.</p></div>
+        <div><h2>Data is constant.<br /><em>Clarity isn't.</em></h2><p>A spacecraft never stops producing telemetry. One unusual reading may be harmless; several changing together can tell a very different story. VANTAGE was built to help an operator see that bigger picture before deciding what to investigate.</p></div>
       </section>
 
       <section className={styles.panelSection}>
@@ -52,13 +52,13 @@ export default function VantageCaseStudy() {
 
       <section className={styles.architecture}>
         <p className={styles.marker}>[ 03 / HOW IT WORKS ]</p>
-        <div className={styles.archHead}><h2>Intelligence,<br />with <em>boundaries.</em></h2><p>VANTAGE separates generated interpretation from source telemetry. The application controls what was actually observed; the model provides structured decision support based on those observations.</p></div>
+        <div className={styles.archHead}><h2>Intelligence,<br />with <em>boundaries.</em></h2><p>VANTAGE never lets an AI model rewrite the spacecraft's readings. The simulation provides the evidence. IBM Granite can interpret it, but the application retains control of the facts.</p></div>
         <div className={styles.pipeline}>{[
           ["01","SIMULATE","Seeded telemetry advances in deterministic two-second ticks."],
           ["02","DETECT","Scenario state and signal changes determine when analysis is appropriate."],
           ["03","ANALYZE","A mock provider or IBM Granite interprets the mission context."],
           ["04","VALIDATE","Server-side checks enforce the structure of model-produced assessments."],
-          ["05","PRESENT","Operators see grounded evidence, correlations, and recommended actions."],
+          ["05","PRESENT","Operators can inspect the evidence behind an assessment before deciding what to do next."],
         ].map(([num,name,detail])=><div className={styles.pipelineStep} key={num}><span>{num} /</span><h3>{name}</h3><p>{detail}</p></div>)}</div>
       </section>
 
@@ -69,7 +69,7 @@ export default function VantageCaseStudy() {
 
       <section className={styles.constraints}>
         <p className={styles.marker}>[ 05 / ENGINEERING DECISIONS ]</p>
-        <div className={styles.constraintsGrid}><h2>Trust is<br /><em>designed in.</em></h2><div><h3>Grounded, not invented.</h3><p>Authoritative telemetry frames are attached by application code, never accepted from the model response. Structured validation rejects malformed outputs.</p><h3>Bounded model calls.</h3><p>Granite is used only at analysis boundaries, with caching and a maximum of four calls per session. The deterministic mock provider supports an offline demonstration.</p><h3>Operator in control.</h3><p>This is a decision-support prototype. It does not autonomously control a spacecraft and does not claim production flight readiness.</p></div></div>
+        <div className={styles.constraintsGrid}><h2>Trust is<br /><em>designed in.</em></h2><div><h3>Grounded, not invented.</h3><p>Authoritative telemetry frames are attached by application code, never accepted from the model response. Structured validation rejects malformed outputs.</p><h3>Bounded model calls.</h3><p>Granite is used only at analysis boundaries, with caching and a maximum of four calls per session. The deterministic mock provider supports an offline demonstration.</p><h3>Operator in control.</h3><p>VANTAGE is a prototype for decision support, not flight software. It cannot issue commands to a spacecraft. The operator remains responsible for every decision.</p></div></div>
       </section>
 
       <section className={styles.closing}><p>[ 06 / THE TAKEAWAY ]</p><h2>The useful part of AI isn't the spectacle.<br /><em>It's the judgment it helps inform.</em></h2><div><a href="https://github.com/ZachariasBraetyllo-Sec/vantage-ai-mission-intelligence" target="_blank" rel="noreferrer">EXPLORE VANTAGE ON GITHUB ↗</a><Link href="/#work">← RETURN TO PORTFOLIO</Link></div></section>
